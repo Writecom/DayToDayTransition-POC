@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 230827932}
   - component: {fileID: 230827936}
   m_Layer: 5
-  m_Name: DayTransition
+  m_Name: DayTransitionCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,7 +341,7 @@ RectTransform:
   m_Children:
   - {fileID: 691322682}
   - {fileID: 1124999461}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 779105452}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -824,6 +824,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &779105451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779105452}
+  m_Layer: 0
+  m_Name: DayTransition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779105452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779105451}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1059.1254, y: 509.82303, z: 4.8792205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 230827935}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &951383451
 GameObject:
   m_ObjectHideFlags: 0
@@ -857,6 +889,7 @@ MonoBehaviour:
   DayTransitionCanvas: {fileID: 230827931}
   dayDisplay: {fileID: 1124999462}
   dayCount: 0
+  DayEnd: {fileID: 7400000, guid: 54b636b2ae36bf244ac5c3271ddbf9ce, type: 2}
 --- !u!4 &951383453
 Transform:
   m_ObjectHideFlags: 0
@@ -1030,7 +1063,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 234881023
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1650,6 +1683,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 230827936}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: DayTransition
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2146456884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1695,6 +1740,6 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1767726485}
-  - {fileID: 230827935}
+  - {fileID: 779105452}
   - {fileID: 1277431884}
   - {fileID: 951383453}

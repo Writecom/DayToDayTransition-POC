@@ -9,6 +9,7 @@ public class DayTransition : MonoBehaviour
     public GameObject DayTransitionCanvas;
     public TMP_Text dayDisplay;
     public int dayCount;
+    public AnimationClip DayEnd;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,26 +32,16 @@ public class DayTransition : MonoBehaviour
     {
         dayCount++;
 
-        //GameObject baseGame = GameObject.Find("Game");
-        //GameObject GameState1 = GameObject.Find("GameState1");
-        //GameObject GameState2 = GameObject.Find("GameState2");
-
-
-        //baseGame.SetActive(false);
-
         dayDisplay.text = "Day " + dayCount.ToString();
 
-        //yield return new WaitForSeconds(3);
+        DayTransitionAnim.SetTrigger("DayStart");
+
+        yield return new WaitForSeconds(3);
 
         DayTransitionAnim.SetTrigger("DayEnd");
 
-        //yield return new WaitForSeconds(1);
-
-        //baseGame.SetActive(true);
-        //GameState1.SetActive(false);
-        //GameState2.SetActive(true);
-
-        yield return new WaitForSeconds(3);
+        //Kode så vi kan hente længden af animationsklippet, og ikke skal gætte os til det
+        yield return new WaitForSeconds(DayEnd.length);
 
         DayTransitionCanvas.SetActive(false);
     }
